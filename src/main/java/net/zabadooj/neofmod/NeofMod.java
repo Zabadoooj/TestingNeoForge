@@ -34,7 +34,6 @@ public class NeofMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
