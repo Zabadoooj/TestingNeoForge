@@ -1,5 +1,6 @@
 package net.zabadooj.neofmod;
 
+import net.zabadooj.neofmod.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -26,14 +27,17 @@ public class NeofMod
     public NeofMod(IEventBus modEventBus, ModContainer modContainer)
     {
         modEventBus.addListener(this::commonSetup);
-
         NeoForge.EVENT_BUS.register(this);
+
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
